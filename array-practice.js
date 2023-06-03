@@ -70,7 +70,15 @@ const secondLargest = (arr) => {
 
 const shuffle = (arr) => {
   // Your code here
-  
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    let newIndex = Math.floor(Math.random() * arr.length);
+    while (res[newIndex] !== undefined) {
+      newIndex = Math.floor(Math.random() * arr.length);
+    }
+    res[newIndex] = arr[i];
+  }
+  return res;
 };
 
 module.exports = [
